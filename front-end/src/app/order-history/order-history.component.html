@@ -1,0 +1,69 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><img src="../../assets/img/order.png" style="padding:10px;width:200px">
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+
+<div class="container">
+
+	<div class="row my-6">
+
+		
+        
+        <div class="col-md-12">
+        <div class="table-responsive">
+
+                
+              <table id="mytable" class="table table-bordred table-striped">
+                   
+                   <thead >
+                       <tr class="info">
+                   <th scope="col" class="text-center "></th>
+                   <th scope="col" class="text-center ">Product Name</th>
+                    <th scope="col" class="text-center " >Color</th>
+                     <th scope="col" class="text-center ">Product Price</th>
+                     <th scope="col" class="text-center ">Quantity</th>
+                     <th scope="col" class="text-center ">Total Amount</th>
+                      <th scope="col" class="text-center ">Date</th>
+                       <th scope="col" class="text-center ">Status</th>
+                       </tr>
+                   </thead>
+    <tbody>
+    
+    <tr *ngFor="let history of result">
+    <td class="text-center"><img src="../../assets/img/{{history.products.image}}" (click)="details(history.products.productid)"
+                style="width:30px" /> </td>
+    <td class="text-center">{{history.products.productName}}</td>
+    <td class="text-center">{{history.products.color}}</td>
+    <td class="text-center">{{history.products.productPrice}}</td>
+    <td class="text-center">{{history.quantity}}</td>
+    <td class="text-center" >{{history.price}}</td>
+    <td class="text-center">{{history.date}}</td>
+    <td class="text-center " style="color:green">Delivered</td>
+    </tr>   
+    </tbody>
+        
+</table>
+
+            
+        </div>
+	</div>
+</div>
+
+
+
+    
+    
+
+    </div>

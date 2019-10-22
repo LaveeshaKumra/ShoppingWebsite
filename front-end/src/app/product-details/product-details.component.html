@@ -1,0 +1,85 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+	<div class="container " >
+<div class="card my-5">
+	<div class="row">
+		<aside class="col-sm-5 border-right">
+<article class="gallery-wrap">
+<div class="img-big-wrap">
+
+<!--add imag src -->
+
+  <div style="text-align: center;">  <img src="../../assets/img/{{result.image}}"></div>
+</div> <!-- slider-product.// -->
+<div class="img-small-wrap" >
+  <div class="item-gallery"> <img src="../../assets/img/{{result.image}}"> </div>
+  <div class="item-gallery"> <img src="../../assets/img/{{result.image}}"> </div>
+  <div class="item-gallery"> <img src="../../assets/img/{{result.image}}"> </div>
+  <div class="item-gallery"> <img src="../../assets/img/{{result.image}}"> </div>
+</div>
+</article>
+		</aside>
+		<aside class="col-sm-7">
+<article class="card-body p-5">
+	<h3 class="title mb-3">{{result.productName}}</h3>
+
+<p class="price-detail-wrap">
+	<span class="price h3 text-warning">
+		<span class="currency">IND Rs.</span>{{result.productPrice}}
+		<span class="num"></span>
+	</span>
+
+</p>
+<dl class="item-property">
+  <dt>Description</dt>
+  <dd><p>{{result.detail}}</p></dd>
+</dl>
+<dl class="param param-feature">
+  <dt>Model#</dt>
+  <dd>{{result.productid}}</dd>
+</dl>  <!-- item-property-hor .// -->
+<dl class="param param-feature">
+  <dt>Color</dt>
+  <dd>{{result.color}}</dd>
+</dl>  <!-- item-property-hor .// -->
+<dl class="param param-feature">
+  <dt>Delivery</dt>
+  <dd>Russia, USA, and Europe</dd>
+</dl>  <!-- item-property-hor .// -->
+
+<hr>
+	<div class="row">
+		
+		<div class="col-sm-7">
+			<dl class="param param-inline">
+				  <dt>Size: </dt>
+				  <dd>
+				  	<label class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <span class="form-check-label">SM</span>
+					</label>
+					<label class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <span class="form-check-label">MD</span>
+					</label>
+					<label class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <span class="form-check-label">XXL</span>
+					</label>
+				  </dd>
+			</dl>  <!-- item-property .// -->
+		</div> <!-- col.// -->
+	</div> <!-- row.// -->
+	<hr>
+	<button  class="btn btn-lg btn-outline-primary text-uppercase mx-3" (click)="addtocart(result.productid)"> <i class="fas fa-shopping-cart"></i> Add to cart </button>
+</article> <!-- card-body.// -->
+		</aside> <!-- col.// -->
+	</div> <!-- row.// -->
+</div> <!-- card.// -->
+
+
+</div>

@@ -1,0 +1,117 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="container mt-4">
+<br>  
+<div class="card bg-light p-5">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<form  [formGroup]="add" (ngSubmit)="onSubmit()">
+		<div><h2 class="text-center">Add Product</h2></div>
+		<br>  
+
+
+
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+		<input  class="form-control" formControlName="pname" placeholder="Product name" type="text"
+		 [(ngModel)]="pname" [ngClass]="{ 'is-invalid': submitted && f.pname.errors }">
+		<div *ngIf="submitted && f.pname.errors" class="invalid-feedback">
+				<div *ngIf="f.pname.errors.required">Product Name is required</div>
+			</div>
+	</div> 
+   
+    
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select class="form-control" [(ngModel)]="category" formControlName="category" >
+			<option selected="" disabled> Select Category</option>
+			<option >T-shirt</option>
+			<option>Shirts</option>
+			<option >Top & Blouse</option>
+			<option >Bottomwear</option>
+			<option>Activewear</option>
+			<option>Nightwear</option>
+			<option>Dresses</option>
+			<option>Footwears</option>
+			<option>Accessories</option>
+			<option>Skincare & makeup</option>
+			<option>Gadgets</option>
+		</select>
+	
+	</div> 
+
+
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+		<input class="form-control" formControlName="color" placeholder="color" type="text"
+		 [(ngModel)]="color" [ngClass]="{ 'is-invalid': submitted && f.color.errors }">
+		<div *ngIf="submitted && f.color.errors" class="invalid-feedback">
+				<div *ngIf="f.color.errors.required">Product Color is required</div>
+			</div>
+	</div> 
+	
+      
+	
+	
+	<div class="form-group input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+			</div>
+			<input class="form-control"  formControlName="pprice" placeholder="Price(INR)" type="text"  
+			 [(ngModel)]="pprice"  [ngClass]="{ 'is-invalid': submitted && f.pprice.errors }">
+			 <div *ngIf="submitted && f.pprice.errors" class="invalid-feedback">
+					 <div *ngIf="f.pprice.errors.required">Product Price is required</div>
+					 <div *ngIf="f.pprice.errors.pattern">Price must be number</div>
+				 </div>
+			
+		</div>   
+
+
+		<div class="form-group input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+				</div>
+				<textarea class="form-control" formControlName="detail" placeholder="Product Description" type="text"  
+				 [(ngModel)]="detail" [ngClass]="{ 'is-invalid': submitted && f.detail.errors }"></textarea>
+				 <div *ngIf="submitted && f.detail.errors" class="invalid-feedback">
+						 <div *ngIf="f.detail.errors.required">Product Description is required</div>
+						 <div *ngIf="f.detail.errors.minlength">Description must be at least 30 characters</div>
+					 </div>
+				
+			</div> 
+
+
+			<!-- <div class="form-group input-group">
+					<input type="file" class="form-control"> 
+				</div>  -->
+
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+					</div>
+					<input class="form-control"  formControlName="image" placeholder="image" type="text"  
+					 [(ngModel)]="image" [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
+					 <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+							 <div *ngIf="f.image.errors.required">Product Image is required</div>
+						 </div>
+					
+				</div>  
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" > Add Product </button>
+	</div> 
+	</form>
+</article>
+</div> 
+
+</div> 

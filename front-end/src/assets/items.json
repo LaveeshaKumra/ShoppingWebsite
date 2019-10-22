@@ -1,0 +1,61 @@
+[
+  {
+    "id":"1",
+    "itemimage": "dd.jpg",
+   "itemname": "Black dress",
+    "price": "600",
+    "itemtype": "Women dresses",
+    "itemdesc":"hccg"
+},
+{
+  "id":"2",
+  "itemimage": "d1.jpeg",
+ "itemname": "Black dress",
+  "price": "600",
+  "itemtype": "Women dresses",
+  "itemdesc":"hccg"
+},
+{
+  "id":"3",
+  "itemimage": "j1.jpeg",
+ "itemname": "Black dress",
+  "price": "600",
+  "itemtype": "Women dresses",
+  "itemdesc":"hccg"
+},
+{
+  "id":"4",
+  "itemimage": "jeans3.jpg",
+ "itemname": "Black dress",
+  "price": "600",
+  "itemtype": "Women dresses",
+  "itemdesc":"hccg"
+},
+{
+  "id":"5",
+  "itemimage": "m1.jpg",
+ "itemname": "Black dress",
+  "price": "600",
+  "itemtype": "Women dresses",
+  "itemdesc":"hccg"
+},
+{
+  "id":"6",
+  "itemimage": "w1.jpg",
+ "itemname": "Black dress",
+  "price": "600",
+  "itemtype": "Women dresses",
+  "itemdesc":"hccg"
+},
+{
+  "id":"7",
+  "itemimage": "t2.jpeg",
+ "itemname": "Black dress",
+  "price": "600",
+  "itemtype": "Women dresses",
+  "itemdesc":"hccg"
+}
+
+
+
+]

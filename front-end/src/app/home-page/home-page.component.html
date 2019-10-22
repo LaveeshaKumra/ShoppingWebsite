@@ -1,0 +1,171 @@
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Sofia" rel='stylesheet'>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light" style="border-bottom: none;">
+
+        <div class="container">
+
+            <a class="navbar-brand text title" href="/" style="color:white">ShopWithUs</a>
+
+
+                <ul class="nav navbar-nav pull-sm-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile" style="color:white">Profile</a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;">
+                        <a href="cart" class="btn btn-success btn-sm mx-3 mt-1" >
+                            <i class="fa fa-shopping-cart"></i> Cart
+                            <span class="badge badge-light">{{length}}</span>
+                        </a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" (click)="logout()" style="color:white">LogOut</a>
+                    </li>
+                    <li class="nav-item" *ngIf="isAdmin()">
+                        <a class="nav-link" (click)="addProduct()" style="color:white">AddProduct</a>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+
+
+<!-- 
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <div class="container">
+
+                <ul class="nav navbar-nav pull-sm-left">
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color:white">Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color:white">Women</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color:white">Kids</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color:white">Home & Living</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color:white">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color:white">Hot deals</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-logo mx-auto">
+                    <li class="nav-item">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" style="width: 400px;" type="search" placeholder="Search"
+                                aria-label="Search" (ngModel)="searchItem">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"(click)="search()">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+    </nav> -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <ul class="nav navbar-nav pull-sm-left">
+                        <li class="nav-item">
+                                <a class="nav-link" (click)="filter('All')" style="color:white">All</a>
+                            </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Tops')" style="color:white">Tops & blouse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('T-shirt')" style="color:white">T-shirts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('shirts')" style="color:white">Shirts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Bottomwear')" style="color:white">Bottomwear</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Activewear')" style="color:white">Activewear</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Nightwear')" style="color:white">Nightwear</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Dresses')" style="color:white">Dresses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Footwears')" style="color:white">Footwears</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Accessories')" style="color:white">Accessories</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Gadgets')" style="color:white">Gadgets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="filter('Skincare')" style="color:white">Skincare </a>
+                    </li>
+                </ul>
+
+        </div>
+    </nav>
+</header>
+
+<div class="container-fluid" style="display: inline-flex;padding-top:10px;padding-left:0px;padding-right:0px;">
+    <div class="col-sm-3">
+                    <div class="card1 col-sm-10 mt-3 ml-2 u bg-light">
+                    
+                            <div class="card-body" >
+                              <h2 class="card-title ml-4"><b>Price Range</b></h2>
+                              <hr/>
+                              <form >
+                                    <input type="radio" (change)="pricefilters($event,500,1000)" name="range" value="0">&nbsp;&nbsp;&nbsp;<b>500-1000</b><br /><br />
+                                    <input type="radio" (change)="pricefilters($event,1000,2000)" name="range" value="0">&nbsp;&nbsp;&nbsp;<b>1000-2000</b><br /><br />
+                                    <input type="radio"  (change)="pricefilters($event,2000,4000)"name="range" value="0">&nbsp;&nbsp;&nbsp;<b>2000-4000</b><br /><br />
+                                    <input type="radio" (change)="pricefilters($event,4000,15000)"name="range" value="0">&nbsp;&nbsp;&nbsp;<b>Above 4000</b><br /><br />
+                                </form>
+                    
+                            </div>
+                          </div>
+                          </div>
+
+    <div class="col-sm-9">
+    <div class="row">
+        <div class="col-md-3 col-sm-2 py-5" *ngFor="let d of result">
+            <div class="product-grid6">
+                <div class="product-image6">
+                    <a (click)="details(d.productid)">
+                        <img class="pic-1" src="/../../assets/img/{{d.image}}" >
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title">{{d.productName}}</h3>
+                    <h2 >{{d.detail}}</h2>
+                    <div class="price">Rs. {{d.productPrice}}
+                        <span>Rs. {{d.productPrice +355}}</span>
+                    </div>
+                </div>
+                <ul class="social">
+                    <li><a  data-tip="Quick View" (click)="details(d.productid)"><i class="fa fa-search"></i></a></li>
+                    <li><a (click)="addtocart(d.productid)" data-tip="Add to Cart" ><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+</div>
+<hr>
+<!-- <app-footer></app-footer> -->
