@@ -13,10 +13,10 @@ public class usercurrent {
     @Autowired
     private userRepository userRepository;
 
-//    public Optional<Users> CurrentUser(Principal principal) {
-//        String username = principal.getName();
-//        return userRepository.findByUsername(username);
-//    }
+   public Optional<Users> CurrentUser1111(Principal principal) {
+       String username = principal.getName();
+       return userRepository.findByUsername(username);
+   }
 //
 //    public int getUserrId(Principal principal) {
 //        String username = principal.getName();
